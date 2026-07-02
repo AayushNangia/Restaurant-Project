@@ -2,13 +2,17 @@ import { connectionStr } from "@/app/lib/db";
 import { Restaurant } from "@/app/lib/restaurantsModel";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
+import data from "@/app/lib/data.json";
+// export async function GET() {
+//     await mongoose.connect(connectionStr, { dbName: "restoDB" });
+
+//     const data = await Restaurant.find();
+//     console.log(data);
+
+//     return NextResponse.json({ result: data });
+// }
 
 export async function GET() {
-    await mongoose.connect(connectionStr, { dbName: "restoDB" });
-
-    const data = await Restaurant.find();
-    console.log(data);
-
     return NextResponse.json({ result: data });
 }
 
