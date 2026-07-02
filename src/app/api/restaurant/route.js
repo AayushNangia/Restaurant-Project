@@ -1,12 +1,12 @@
 import { connectionStr } from "@/app/lib/db";
-import { restaurantSchema } from "@/app/lib/restaurantsModel";
+import { Restaurant } from "@/app/lib/restaurantsModel";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-    await mongoose.connect(connectionStr, { useNewUrlParser: true, dbName: "restoDB" });
+    await mongoose.connect(connectionStr, { dbName: "restoDB" });
 
-    const data = await restaurantSchema.find();
+    const data = await Restaurant.find();
     console.log(data);
 
     return NextResponse.json({ result: data });
@@ -16,9 +16,9 @@ export async function GET() {
 export async function POST(request){
     let payload= await request.json();
 
-    await mongoose.connect(connectionStr, { useNewUrlParser: true });
-    const restaurant = new restaurantSchema(payload);
-  
-   const result = await restaurant.save();
+    await mongoose.connect(connectionStr, { dbName: "restoDB" });
+    const restaurant = new Restaurant(payload);
+
+    const result = await restaurant.save();
     return NextResponse.json({ result, success: true });
- } 
+ }
