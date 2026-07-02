@@ -1,31 +1,24 @@
-import { NextResponse } from "next/server";
-import mongoose from "mongoose";
 import { connectionStr } from "@/app/lib/db";
-import { Restaurant } from "@/app/lib/restaurantsModel";
- 
+import { restaurantSchema } from "@/app/lib/restaurantsModel";
+import mongoose from "mongoose";
+import { NextResponse } from "next/server";
+
 export async function GET() {
-    try {
-        console.log("🔵 API Hit - GET /api/restaurant");
-        console.log("🔵 Connection String:", connectionStr);
-        console.log("🔵 Mongoose State:", mongoose.connection.readyState);
- 
-        await mongoose.connect(connectionStr, { dbName: "restoDB" }); // 👈 add this
-        console.log("✅ MongoDB Connected Successfully");
- 
-        const data = await Restaurant.find();
-        console.log("✅ Data Fetched - Total Records:", data.length);
-        console.log("✅ Data:", JSON.stringify(data));
- 
-        return NextResponse.json({ result: data });
- 
-    } catch (error) {
-        console.error("❌ Error Name:", error.name);
-        console.error("❌ Error Message:", error.message);
-        console.error("❌ Full Error:", error);
- 
-        return NextResponse.json(
-            { error: error.message },
-            { status: 500 }
-        );
-    }
+    await mongoose.connect(connectionStr, { useNewUrlParser: true, dbName: "restoDB" });
+
+    const data = await restaurantSchema.find();
+    console.log(data);
+
+    return NextResponse.json({ result: data });
 }
+
+
+export async function POST(request){
+    let payload= await request.json();
+
+    await mongoose.connect(connectionStr, { useNewUrlParser: true });
+    const restaurant = new restaurantSchema(payload);
+  
+   const result = await restaurant.save();
+    return NextResponse.json({ result, success: true });
+ } 
