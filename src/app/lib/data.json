@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Pizza Palace",
+        "email": "pizza@gmail.com",
+        "city": "Delhi",
+        "address": "123 Main St",
+        "phoneNumber": "9999999999"
+    },
+    {
+        "name": "Burger Hub",
+        "email": "burger@gmail.com",
+        "city": "Mumbai",
+        "address": "456 Park Ave",
+        "phoneNumber": "8888888888"
+    }
+]
