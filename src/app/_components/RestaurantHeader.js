@@ -10,12 +10,12 @@ const  RestaurantHeader =()=>{
 
     useEffect(()=>{
         let data = localStorage.getItem("restaurantUser");
-                if(!data){
-                    router.push("/restaurant");
+        if(!data){
+            router.push("/restaurant");
         }else{
             setDetails(JSON.parse(data));
         }
-})
+    }, [router])
     return(
         <div className='header-wrapper'>
             <div className="logo">
