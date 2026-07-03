@@ -12,5 +12,11 @@
         "city": "Mumbai",
         "address": "456 Park Ave",
         "phoneNumber": "8888888888"
+    },   {
+        "name": "Burger Hub",
+        "email": "burger@gmail.com",
+        "city": "Mumbai",
+        "address": "456 Park Ave",
+        "phoneNumber": "8888888888"
     }
 ]
