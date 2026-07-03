@@ -1,5 +1,21 @@
+ 'use client'
 import Link from 'next/link'
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+
+
 const  RestaurantHeader =()=>{
+    const [details,setDetails] = useState();
+    const router= useRouter();
+
+    useEffect(()=>{
+        let data = localStorage.getItem("restaurantUser");
+                if(!data){
+                    router.push("/restaurant");
+        }else{
+            setDetails(JSON.parse(data));
+        }
+})
     return(
         <div className='header-wrapper'>
             <div className="logo">
@@ -11,14 +27,16 @@ const  RestaurantHeader =()=>{
                     <Link href="/">Home</Link>
 
                 </li>
-                <li>
-                    <Link href="/">login/SignUp</Link>
+            {
+                details && details.name?
+                <>
+                <li><button>logout</button></li>
+                <li><Link href ="/"> profile</Link></li></>
+                : <li><Link href="/">login/signup</Link></li>
+            }
 
-                </li>
-                <li>
-                    <Link href="/">Profile</Link>
 
-                </li>
+               
             </ul>
         </div>
     )
