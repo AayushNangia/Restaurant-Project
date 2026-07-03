@@ -16,6 +16,12 @@ const  RestaurantHeader =()=>{
             setDetails(JSON.parse(data));
         }
     }, [router])
+
+    const handleLogout = ()=>{
+        localStorage.removeItem("restaurantUser");
+        setDetails(undefined);
+        router.push("/restaurant");
+    }
     return(
         <div className='header-wrapper'>
             <div className="logo">
@@ -30,7 +36,7 @@ const  RestaurantHeader =()=>{
             {
                 details && details.name?
                 <>
-                <li><button>logout</button></li>
+                <li><button onClick={handleLogout}>logout</button></li>
                 <li><Link href ="/"> profile</Link></li></>
                 : <li><Link href="/">login/signup</Link></li>
             }
