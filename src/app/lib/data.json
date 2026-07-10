@@ -12,6 +12,7 @@
         "city": "Mumbai",
         "address": "456 Park Ave",
         "phoneNumber": "8888888888"
+<<<<<<< HEAD
     },
      {
         "name": "pasta Hub",
@@ -34,5 +35,13 @@
         "city": "Delhi",
         "address": "36 Ave",
         "phoneNumber": "83382288888"
+=======
+    },   {
+        "name": "Burger Hub",
+        "email": "burger@gmail.com",
+        "city": "Mumbai",
+        "address": "456 Park Ave",
+        "phoneNumber": "8888888888"
+>>>>>>> 598e274bab4eac2cdd11c5682fc305a8fc500cf0
     }
 ]
