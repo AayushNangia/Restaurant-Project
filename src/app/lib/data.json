@@ -12,5 +12,27 @@
         "city": "Mumbai",
         "address": "456 Park Ave",
         "phoneNumber": "8888888888"
+    },
+     {
+        "name": "pasta Hub",
+        "email": "pasta@gmail.com",
+        "city": "Delhi",
+        "address": "36 Park Ave",
+        "phoneNumber": "8882288888"
+    },
+    {
+        "name": "BBQ",
+        "email": "bbq@gmail.com",
+        "password": "bbq123",
+        "city": "Delhi",
+        "address": "Rohini sector 5",
+        "phoneNumber": "8882288888"
+    },
+    {
+        "name": "subway",
+        "email": "sub@gmail.com",
+        "city": "Delhi",
+        "address": "36 Ave",
+        "phoneNumber": "83382288888"
     }
 ]

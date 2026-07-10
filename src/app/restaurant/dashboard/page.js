@@ -2,8 +2,10 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import RestaurantHeader from "@/app/_components/RestaurantHeader";
+import FooditemList from "@/app/_components/FooditemList";
 
 import './../style.css'
+import AddFoodItems from "@/app/_components/AddFooditem";
 
 const Dashboard =() =>{
     const [ready, setReady] = useState(false);
@@ -16,13 +18,19 @@ const Dashboard =() =>{
             setReady(true);
         }
     }, [router])
-
+    const [addFoodItem, setAddItem] = useState(false);
     if(!ready) return null;
-
+   
     return(
         <div>
             <RestaurantHeader />
-            <h1>Welcome to dashboard</h1>
+            <button onClick={()=>setAddItem(true)}>Add Food </button>
+            <button onClick={()=>setAddItem(false)}> Dashboard</button>
+            {
+                addFoodItem ? <AddFoodItems/> : <FooditemList/>
+            }
+
+
         </div>
     )
 }

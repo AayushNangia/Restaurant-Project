@@ -22,6 +22,8 @@ const  RestaurantHeader =()=>{
         setDetails(undefined);
         router.push("/restaurant");
     }
+
+    
     return(
         <div className='header-wrapper'>
             <div className="logo">

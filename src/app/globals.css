@@ -12,6 +12,7 @@ margin:10px;
 }
 .container{
   text-align:center;
+  margin-bottom: 50px;
 }
 .button-link{
   border: 0;
@@ -19,4 +20,24 @@ margin:10px;
   background-color: transparent;
   color:skyblue;
   margin: 20px;
+}
+
+.input-error{
+  position:absolute;
+  color:red;
+  font-size: 12px;
+  padding: 7px;
+}
+table ,th , td{
+  border   : 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+table td button{
+  margin : 5px
+}
+table img{
+  width: 80px;
+  
 }
