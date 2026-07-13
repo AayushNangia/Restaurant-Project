@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { foodSchema } from "@/app/lib/foodsModel";
 import mongoose from "mongoose";
-const connectionStr = process.env.MONGO_URI;
+import { connectionStr } from "@/app/lib/db";
 
 
 export async function POST (request){
